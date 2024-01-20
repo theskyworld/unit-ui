@@ -4,7 +4,7 @@
       "@/*": ["./src/*"]
     },
     "declaration": true,
-    "outDir": "./dist"
-  },
-  "alwaysStrict": true
+    "outDir": "./dist",
+    "alwaysStrict": true
+  }
 }
