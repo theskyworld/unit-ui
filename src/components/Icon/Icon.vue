@@ -11,7 +11,6 @@ export type Animate =
   | "flip"
   | "shake"
   | "spin"
-  | "spin-reverse"
   | "spin-pulse";
 export interface IconProps {
   size?: number | string;
@@ -50,7 +49,7 @@ const {
 const iconVal = computed(() => `fa-solid fa-${icon}`);
 const sizeVal = computed(() => (typeof size === "number" ? `${size}px` : size));
 const rotationVal = computed(() => `rotate(${rotation}deg)`);
-
+const hColorVal = computed(() => (hColor ? hColor : color));
 /* methods */
 defineExpose({
   iconVal,
@@ -83,7 +82,7 @@ defineExpose({
     transform: v-bind(rotationVal);
     border-color: v-bind(bColor);
     &:hover {
-      color: v-bind(hColor);
+      color: v-bind(hColorVal);
     }
   }
 }
