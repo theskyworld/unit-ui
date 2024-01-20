@@ -50,6 +50,14 @@ const borderRadiusVal = computed(() => {
 });
 
 /* methods */
+defineExpose({
+  bgColor,
+  wVal,
+  hVal,
+  opacity,
+  autoHide,
+  borderRadiusVal,
+});
 onMounted(() => {
   if (navElemRef.value && autoHide) {
     const navParentNode = navElemRef.value.parentNode;
