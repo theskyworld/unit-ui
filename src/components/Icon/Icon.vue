@@ -39,7 +39,6 @@ const {
 } = withDefaults(defineProps<IconProps>(), {
   size: "16px",
   color: "#000",
-  hColor: "red",
   fixWidth: false,
   rotation: 0,
   border: false,
