@@ -3,12 +3,12 @@ import { computed, Ref, onMounted, ref } from "vue";
 /*********************************导包分界线***************************************/
 /* types */
 export interface NavProps {
-  bgColor?: string; // 指定Nav的背景颜色，支持任意颜色字符串，默认为#ccc
-  w?: number | string; // 指定Nav的宽度，支持数值或者百分比字符串，默认为100%
-  h?: number | string; // 指定Nav的高度，支持数值或者百分比字符串，默认为100%
-  opacity?: number; // 指定Nav的透明度，支持数值（0-1），默认为1
+  bgColor?: string;
+  w?: number | string;
+  h?: number | string; // 指定Nav的高度，支持数值或者百分比字符串，默认为50px
+  opacity?: number; //
   autoHide?: boolean; // 指定Nav在滑动过程中是否自动隐藏，默认为false
-  borderRadius?: number | string; // 指定Nav的圆角，支持数值或者百分比字符串：默认为0
+  borderRadius?: number | string;
 }
 /* macros */
 /* props */
@@ -17,7 +17,7 @@ const { bgColor, w, h, opacity, autoHide, borderRadius } = withDefaults(
   {
     bgColor: "var(--nav-bg-color)",
     w: "100%",
-    h: "100%",
+    h: "50px",
     opacity: 1,
     autoHide: false,
     borderRadius: 0,
@@ -91,10 +91,13 @@ onMounted(() => {
 </template>
 <style scoped lang="scss">
 .nav {
+  z-index: 999;
   width: v-bind(wVal);
   height: v-bind(hVal);
   opacity: v-bind(opacity);
-  position: fixed;
+  // 相对于容器元素上边界0px的位置固定定位
+  position: sticky;
+  top: 0;
   border-radius: v-bind(borderRadiusVal);
   transition: opacity 0.3s ease-in-out;
   // 垂直居中
@@ -116,6 +119,8 @@ onMounted(() => {
   .nav_center {
     grid-column-start: center-start;
     grid-column-end: right-start;
+    display: flex;
+    justify-content: center;
   }
   .nav_right {
     grid-column-start: right-start;

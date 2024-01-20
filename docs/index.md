@@ -11,7 +11,7 @@ hero:
       link: /markdown-examples
     - theme: alt
       text: 使用
-      link: /api-examples
+      link: ./mds/nav.md
 
 features:
   - title: Feature A
