@@ -60,14 +60,15 @@ defineExpose({
 });
 onMounted(() => {
   if (navElemRef.value && autoHide) {
-    const navParentNode = navElemRef.value.parentNode;
+    const navParentNode: ParentNode | null = navElemRef.value.parentNode;
     if (navParentNode) {
-      navParentNode.onscroll = () => {
-        navElemRef.value.style.opacity = 0;
+      (navParentNode as HTMLElement).onscroll = () => {
+        navElemRef.value!.style.opacity = "0";
       };
       // 停止滑动时，恢复以前的opacity值
-      navParentNode.onscrollend = () => {
-        navElemRef.value.style.opacity = 1;
+      // @ts-ignore
+      (navParentNode as HTMLElement).onscrollend = () => {
+        navElemRef.value!.style.opacity = "1";
       };
     }
   }
