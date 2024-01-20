@@ -53,6 +53,17 @@ const sizeVal = computed(() => (typeof size === "number" ? `${size}px` : size));
 const rotationVal = computed(() => `rotate(${rotation}deg)`);
 
 /* methods */
+defineExpose({
+  iconVal,
+  sizeVal,
+  color,
+  hColor,
+  fixWidth,
+  rotationVal,
+  animate,
+  border,
+  bColor,
+});
 </script>
 <template>
   <div class="icon">
