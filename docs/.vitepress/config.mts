@@ -39,6 +39,10 @@ export default defineConfig({
             text: "图标&nbsp;Icon",
             link: "../mds/icon.md",
           },
+          {
+            text: "Logo",
+            link: "../mds/logo.md",
+          },
         ],
       },
     ],
