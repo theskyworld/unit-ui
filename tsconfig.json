@@ -1,4 +1,9 @@
 {
+  "reference": [
+    {
+      "path": "./docs/tsconfig.docs.json"
+    }
+  ],
   "compilerOptions": {
     "paths": {
       "@/*": ["./src/*"]
