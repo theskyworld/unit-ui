@@ -1,11 +1,17 @@
 <script setup lang="ts">
-import Icon from "./components/Icon";
+import Logo from "@/components/Logo";
+/*********************************导包分界线***************************************/
+/* types */
+/* macros */
+/* props */
+/* emits */
+/* datas */
+/* computed */
+/* methods */
 </script>
-
 <template>
-  <div class="container" ref="testElemRef">
-    <Icon icon="coffee" :size="32" hColor="red" :border="true" bColor="red" />
+  <div class="logo">
+    <Logo img="https://t.mwm.moe/pc/" />
   </div>
 </template>
-
 <style scoped lang="scss"></style>
