@@ -7,7 +7,7 @@ prev:
 
 next:
   text: "图标"
-  link: "./logo.md"
+  link: "./icon.md"
 ---
 
 # 导航
