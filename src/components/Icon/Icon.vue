@@ -67,7 +67,7 @@ defineExpose({
   <div class="icon">
     <font-awesome-icon
       :icon="iconVal"
-      class="icon_com"
+      class="icon__com"
       :fixWidth="fixWidth"
       v-bind:[animate]="true"
       :border="border"
@@ -76,7 +76,7 @@ defineExpose({
 </template>
 <style scoped lang="scss">
 .icon {
-  .icon_com {
+  .icon__com {
     font-size: v-bind(sizeVal);
     color: v-bind(color);
     transform: v-bind(rotationVal);

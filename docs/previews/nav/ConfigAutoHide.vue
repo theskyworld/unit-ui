@@ -5,7 +5,7 @@ import Nav from "@/components/Nav";
 <template>
   <div class="container">
     <Nav :h="40" :border-radius="10" auto-hide />
-    <div class="container_gap"></div>
+    <div class="container__gap"></div>
   </div>
 </template>
 
@@ -14,7 +14,7 @@ import Nav from "@/components/Nav";
   width: 100%;
   overflow-y: auto;
   height: 200px;
-  .container_gap {
+  .container__gap {
     width: 100%;
     height: 500px;
   }

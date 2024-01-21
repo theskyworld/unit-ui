@@ -116,9 +116,9 @@ function copyIconName(iconName: string) {
       @click="copyIconName(iconName)"
       v-for="iconName in iconNames"
       :key="iconName"
-      class="icon_item"
+      class="icon__item"
     >
-      <Icon class="icon_item_com" :icon="iconName" color="#fff" :size="20" />
+      <Icon class="icon__item__com" :icon="iconName" color="#fff" :size="20" />
     </div>
   </div>
 </template>
@@ -128,7 +128,7 @@ function copyIconName(iconName: string) {
   display: grid;
   height: max-content;
   grid-template-columns: repeat(10, 1fr);
-  .icon_item {
+  .icon__item {
     border: solid 1px gray;
     margin-bottom: 10px;
     width: 50px;
@@ -138,7 +138,7 @@ function copyIconName(iconName: string) {
     &:hover {
       background-color: rgb(224, 223, 223, 0.2);
     }
-    .icon_item_com {
+    .icon__item__com {
       transform: translate(25%, 50%);
     }
   }

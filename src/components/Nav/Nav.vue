@@ -79,10 +79,10 @@ onMounted(() => {
     <!-- 可以只传入default插槽的内容，不进行左中右布局 -->
     <slot name="default" />
     <!-- 也可以分别传入左中右插槽的内容，对应地进行左中右布局 -->
-    <div class="nav_left slot">
+    <div class="nav__left slot">
       <slot name="left" />
     </div>
-    <div class="nav_center slot">
+    <div class="nav__center slot">
       <slot name="center" />
     </div>
     <div class="nav-right slot">
@@ -113,17 +113,17 @@ onMounted(() => {
       right: 10px;
     }
   }
-  .nav_left {
+  .nav__left {
     grid-column-start: left-start;
     grid-column-end: center-start;
   }
-  .nav_center {
+  .nav__center {
     grid-column-start: center-start;
     grid-column-end: right-start;
     display: flex;
     justify-content: center;
   }
-  .nav_right {
+  .nav__right {
     grid-column-start: right-start;
     grid-column-end: cols-end;
   }
