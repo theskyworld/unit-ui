@@ -26,6 +26,12 @@ const emit = defineEmits<LogoEmits>();
 const wVal = computed(() => (typeof w === "number" ? `${w}px` : w));
 const hVal = computed(() => (typeof h === "number" ? `${h}px` : h));
 /* methods */
+defineExpose({
+  img,
+  alt,
+  wVal,
+  hVal,
+});
 </script>
 <template>
   <div class="logo" @click="emit('click')">
