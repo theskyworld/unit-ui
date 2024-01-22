@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Logo from "@/components/Logo";
+import { createNotification } from "@/components/Notification";
 /*********************************导包分界线***************************************/
 /* types */
 /* macros */
@@ -10,8 +10,21 @@ import Logo from "@/components/Logo";
 /* methods */
 </script>
 <template>
-  <div class="logo">
-    <Logo img="https://t.mwm.moe/pc/" />
-  </div>
+  <button
+    @click="
+      createNotification({
+        type: 'error',
+        message: 'error message',
+        position: 'top-right',
+      })
+    "
+    style="margin: 300px"
+  >
+    notification
+  </button>
 </template>
-<style scoped lang="scss"></style>
+<style lang="scss">
+body {
+  background-color: #000;
+}
+</style>
