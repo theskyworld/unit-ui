@@ -8,4 +8,10 @@ export default defineConfig({
     include: ["**/*.spec.ts"],
   },
   plugins: [vue()],
+  // 配置路径别名
+  resolve: {
+    alias: {
+      "@": "./src",
+    },
+  },
 });

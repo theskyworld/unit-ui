@@ -164,6 +164,12 @@ setTimeout(() => {
 defineExpose({
   isShow,
   notificationHeight,
+  type,
+  message,
+  position,
+  durationVal,
+  offset,
+  close,
 });
 </script>
 <template>
