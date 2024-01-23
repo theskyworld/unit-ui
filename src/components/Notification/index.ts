@@ -1,7 +1,7 @@
 import Notification from "./Notifiication.vue";
 import createNotification from "./createNotification";
-export default Notification;
-export { createNotification };
+export default createNotification;
+export { Notification };
 export type {
   NotificationType,
   NotificationPos,
