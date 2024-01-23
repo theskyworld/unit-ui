@@ -21,7 +21,7 @@ export interface ButtonProps {
   icon?: string;
   iconBefore?: string;
   iconSize?: number | string;
-  appearance: appearanceType;
+  appearance?: appearanceType;
   href?: string;
   target?: targetType;
   animate?: Animate;
@@ -29,10 +29,6 @@ export interface ButtonProps {
 export interface ButtonEmits {
   (e: "click", ...args: unknown): void;
   (e: "click", ...args: unknown): unknown;
-  (e: "mouseover", ...args: unknown): void;
-  (e: "mouseover", ...args: unknown): unknown;
-  (e: "mouseleave", ...args: unknown): void;
-  (e: "mouseleave", ...args: unknown): unknown;
 }
 /* macros */
 /* props */
@@ -73,7 +69,7 @@ const wVal = computed(() => (typeof w === "number" ? `${w}px` : w));
 const hVal = computed(() => (typeof h === "number" ? `${h}px` : h));
 </script>
 <template>
-  <div class="button-container">
+  <div class="button-container" @click="emit('click')">
     <div
       v-if="appearance === 'button'"
       role="button"
@@ -88,7 +84,6 @@ const hVal = computed(() => (typeof h === "number" ? `${h}px` : h));
           large: size === 'large',
         },
       ]"
-      @click="emit('click')"
     >
       <span v-if="iconBefore" class="button-container__button__icon">
         <Icon
@@ -206,6 +201,13 @@ const hVal = computed(() => (typeof h === "number" ? `${h}px` : h));
     cursor: pointer;
     &:hover {
       color: green;
+    }
+    a {
+      text-decoration: none;
+      color: v-bind(color);
+      &:hover {
+        color: green;
+      }
     }
   }
   .button-container__icon {

@@ -4,6 +4,9 @@ description: Notification组件
 prev:
   text: "Logo"
   link: "./logo.md"
+next:
+  text: "Button"
+  link: "./button.md"
 ---
 
 # 通知

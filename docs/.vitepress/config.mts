@@ -47,6 +47,10 @@ export default defineConfig({
             text: "通知&nbsp;Notification",
             link: "../mds/notification.md",
           },
+          {
+            text: "按钮&nbsp;Button",
+            link: "../mds/button.md",
+          },
         ],
       },
     ],

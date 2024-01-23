@@ -12,19 +12,7 @@ import Button from "@/components/Button";
 </script>
 <template>
   <div class="container">
-    <Button content="click" />
-    <Button content="click" type="info" />
-    <Button content="click" type="warn" />
-    <Button content="click" type="error" />
-    <Button content="click" type="success" />
-    <Button content="click" type="success" round />
-    <Button content="click" type="success" :w="30" :h="30" circle />
-    <Button content="click" bgColor="green" />
-    <Button content="click" size="small" bgColor="green" />
-    <Button content="click" size="medium" bgColor="green" />
-    <Button content="click" size="large" bgColor="green" />
-    <Button :w="100" :h="50" content="click" bgColor="green" />
-    <Button content="click" size="medium" bgColor="green" color="red" />
+    <Button appearance="a" href="https://vuejs.org/">Vue</Button>
   </div>
 </template>
 <style lang="scss">
