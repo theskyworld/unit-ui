@@ -71,4 +71,5 @@ export default function createNotification(props?: NotificationProps) {
   nextTick(() => {
     lastElemHeight = vnode.component.exposed.notificationHeight.value;
   });
+  return vnode;
 }
