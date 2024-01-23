@@ -19,12 +19,14 @@ export default function createNotification(props?: NotificationProps) {
   let type: NotificationType,
     message: string,
     position: NotificationPos,
-    duration: number;
+    duration: number,
+    animate: boolean;
   if (props) {
     type = props.type;
     message = props.message;
     position = props.position;
     duration = props.duration;
+    animate = props.animate;
   }
   i++;
   // 用于挂载Notification示例，控制在上一个Notification被卸载后，当前Notification的偏移量的实现
@@ -56,6 +58,7 @@ export default function createNotification(props?: NotificationProps) {
     message,
     position,
     duration,
+    animate,
     offset: i * 10 + lastElemHeight * (i - 1), // 当前Notification相对于body上边界的偏移量(对应css中的top值)
     unRender,
   });

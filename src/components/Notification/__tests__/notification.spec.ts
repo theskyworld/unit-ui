@@ -23,6 +23,7 @@ describe("Notification", () => {
         duration: 3,
         offset: 10,
         unRender: mockFn,
+        animate: true,
       },
     });
     const vm = wrapper.vm;
@@ -31,6 +32,10 @@ describe("Notification", () => {
     expect(vm.position).toBe("top-right");
     expect(vm.durationVal).toBe("3s");
     expect(vm.offset).toBe(10);
+    expect(vm.animate).toBe(true);
+    expect(
+      wrapper.findAllComponents({ name: "Icon" })[0].props("animate")
+    ).toBe("beat");
     vm.close();
     expect(mockFn).toHaveBeenCalled();
   });
@@ -41,7 +46,6 @@ describe("Notification", () => {
     const firstIcon = allIcons[0];
     expect(firstIcon.props("icon")).toBe("circle-info");
     expect(firstIcon.props("color")).toBe("#fff");
-    expect(firstIcon.props("animate")).toBe("beat");
     // 第二个Icon
     const secondIcon = allIcons[1];
     expect(secondIcon.props("icon")).toBe("xmark");

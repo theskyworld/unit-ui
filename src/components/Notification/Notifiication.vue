@@ -17,20 +17,20 @@ export interface NotificationProps {
   position?: NotificationPos;
   duration?: number;
   offset?: number;
+  animate?: boolean;
   unRender?: () => void;
 }
 /* macros */
 /* props */
-const { type, message, position, duration, offset, unRender } = withDefaults(
-  defineProps<NotificationProps>(),
-  {
+const { type, message, position, duration, offset, unRender, animate } =
+  withDefaults(defineProps<NotificationProps>(), {
     type: "info",
     message: "message",
     position: "top-center",
     duration: 5,
     offset: 0,
-  }
-);
+    animate: false,
+  });
 /* emits */
 /* datas */
 const isShow = ref(false);
@@ -170,13 +170,14 @@ defineExpose({
   durationVal,
   offset,
   close,
+  animate,
 });
 </script>
 <template>
   <Transition :name="transitionName">
     <div class="notification" v-if="isShow" ref="notificationElemRef">
       <div class="notification__icon">
-        <Icon :icon="iconVal" color="#fff" animate="beat" />
+        <Icon :icon="iconVal" color="#fff" :animate="animate ? 'beat' : null" />
       </div>
       <div class="notification__message">
         <p>{{ message }}</p>
