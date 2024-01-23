@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { createNotification } from "@/components/Notification";
+import Button from "@/components/Button";
+
 /*********************************导包分界线***************************************/
 /* types */
 /* macros */
@@ -10,21 +11,31 @@ import { createNotification } from "@/components/Notification";
 /* methods */
 </script>
 <template>
-  <button
-    @click="
-      createNotification({
-        type: 'error',
-        message: 'error message',
-        position: 'top-right',
-      })
-    "
-    style="margin: 300px"
-  >
-    notification
-  </button>
+  <div class="container">
+    <Button content="click" />
+    <Button content="click" type="info" />
+    <Button content="click" type="warn" />
+    <Button content="click" type="error" />
+    <Button content="click" type="success" />
+    <Button content="click" type="success" round />
+    <Button content="click" type="success" :w="30" :h="30" circle />
+    <Button content="click" bgColor="green" />
+    <Button content="click" size="small" bgColor="green" />
+    <Button content="click" size="medium" bgColor="green" />
+    <Button content="click" size="large" bgColor="green" />
+    <Button :w="100" :h="50" content="click" bgColor="green" />
+    <Button content="click" size="medium" bgColor="green" color="red" />
+  </div>
 </template>
 <style lang="scss">
 body {
   background-color: #000;
+}
+.container {
+  div {
+    margin : {
+      top: 10px;
+    }
+  }
 }
 </style>
