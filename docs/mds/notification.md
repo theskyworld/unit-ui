@@ -24,3 +24,7 @@ prev:
 
 默认为 5s
 <preview path="../previews/notification/ConfigDuration.vue"></preview>
+
+## 添加图标动画
+
+<preview path="../previews/notification/ConfigAnimate.vue"></preview>
