@@ -88,10 +88,10 @@ const hVal = computed(() => (typeof h === "number" ? `${h}px` : h));
     >
       <span v-if="iconBefore" class="button-container__button__icon">
         <Icon :icon="iconBefore" :color="color" />
-        <p v-if="content" class="afterIcon">{{ content }}</p>
+        <div v-if="content" class="afterIcon">{{ content }}</div>
       </span>
       <span v-else-if="icon" class="button-container__button__icon">
-        <p v-if="content" class="beforeIcon">{{ content }}</p>
+        <div v-if="content" class="beforeIcon">{{ content }}</div>
         <Icon :icon="icon" :color="color" />
       </span>
       <p v-else>{{ content }}</p>
