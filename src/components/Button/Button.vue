@@ -119,6 +119,7 @@ const hVal = computed(() => (typeof h === "number" ? `${h}px` : h));
       :color="color"
       :size="iconSize"
       :animate="animate"
+      class="button-container__icon"
     />
   </div>
 </template>
@@ -202,6 +203,12 @@ const hVal = computed(() => (typeof h === "number" ? `${h}px` : h));
   }
   .button-container__text {
     color: v-bind(color);
+    cursor: pointer;
+    &:hover {
+      color: green;
+    }
+  }
+  .button-container__icon {
     cursor: pointer;
     &:hover {
       color: green;
