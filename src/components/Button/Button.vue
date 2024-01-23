@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import Icon from "@/components/Icon";
+import type { Animate } from "@components/Icon";
 /*********************************导包分界线***************************************/
 /* types */
 export type ButtonType = "default" | "info" | "warn" | "success" | "error";
@@ -19,9 +20,11 @@ export interface ButtonProps {
   color?: string;
   icon?: string;
   iconBefore?: string;
+  iconSize?: number | string;
   appearance: appearanceType;
   href?: string;
   target?: targetType;
+  animate?: Animate;
 }
 export interface ButtonEmits {
   (e: "click", ...args: unknown): void;
@@ -48,6 +51,7 @@ const {
   target,
   icon,
   iconBefore,
+  animate,
 } = withDefaults(defineProps<ButtonProps>(), {
   type: "default",
   round: false,
@@ -87,12 +91,17 @@ const hVal = computed(() => (typeof h === "number" ? `${h}px` : h));
       @click="emit('click')"
     >
       <span v-if="iconBefore" class="button-container__button__icon">
-        <Icon :icon="iconBefore" :color="color" />
+        <Icon
+          :icon="iconBefore"
+          :color="color"
+          :size="iconSize"
+          :animate="animate"
+        />
         <div v-if="content" class="afterIcon">{{ content }}</div>
       </span>
       <span v-else-if="icon" class="button-container__button__icon">
         <div v-if="content" class="beforeIcon">{{ content }}</div>
-        <Icon :icon="icon" :color="color" />
+        <Icon :icon="icon" :color="color" :size="iconSize" :animate="animate" />
       </span>
       <p v-else>{{ content }}</p>
     </div>
@@ -104,7 +113,13 @@ const hVal = computed(() => (typeof h === "number" ? `${h}px` : h));
     <span v-else-if="appearance === 'text'" class="button-container__text">
       <p><slot /></p>
     </span>
-    <Icon v-else-if="appearance === 'icon'" :icon="icon" :color="color" />
+    <Icon
+      v-else-if="appearance === 'icon'"
+      :icon="icon"
+      :color="color"
+      :size="iconSize"
+      :animate="animate"
+    />
   </div>
 </template>
 <style scoped lang="scss">
