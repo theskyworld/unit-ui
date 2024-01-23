@@ -1,6 +1,10 @@
 import Notification from "./Notifiication.vue";
 import { render, h, nextTick } from "vue";
-import type { NotificationType, NotificationPos } from "./Notifiication.vue";
+import type {
+  NotificationType,
+  NotificationPos,
+  NotificationProps,
+} from "./Notifiication.vue";
 
 let i = 0; // 记录当前渲染Notification的数量
 let lastElemHeight = 0; // 记录上一个Notification的高度
@@ -11,17 +15,17 @@ const notifications = []; // 存储所有的Notification
  * 调用函数后通过h和render进行渲染，同时根据offset动态确定Notification的偏移量，避免不同位置的Notification相互覆盖
  * 外部创建unRender函数并传递给Notification，当Notification卸载时，调用unRender，进行外部的卸载
  */
-export default function createNotification({
-  type,
-  message,
-  position,
-  duration,
-}: {
-  type?: NotificationType;
-  message?: string;
-  position?: NotificationPos;
-  duration?: number;
-}) {
+export default function createNotification(props?: NotificationProps) {
+  let type: NotificationType,
+    message: string,
+    position: NotificationPos,
+    duration: number;
+  if (props) {
+    type = props.type;
+    message = props.message;
+    position = props.position;
+    duration = props.duration;
+  }
   i++;
   // 用于挂载Notification示例，控制在上一个Notification被卸载后，当前Notification的偏移量的实现
   const containerElem = document.createElement("div");
