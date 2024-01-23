@@ -43,6 +43,10 @@ export default defineConfig({
             text: "Logo",
             link: "../mds/logo.md",
           },
+          {
+            text: "通知&nbsp;Notification",
+            link: "../mds/notification.md",
+          },
         ],
       },
     ],

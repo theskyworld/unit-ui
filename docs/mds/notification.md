@@ -11,3 +11,11 @@ prev:
 ## 基本样式
 
 <preview path="../previews/notification/Basic.vue"></preview>
+
+## 不同类型
+
+<preview path="../previews/notification/ConfigType.vue"></preview>
+
+## 不同位置
+
+<preview path="../previews/notification/ConfigPos.vue"></preview>
