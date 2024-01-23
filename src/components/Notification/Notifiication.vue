@@ -207,6 +207,7 @@ defineExpose({
   background-color: v-bind(bgColorVal);
   color: #fff;
   border-radius: 5px;
+  z-index: 999;
   padding: 10px {
     left: 20px;
   }

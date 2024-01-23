@@ -39,7 +39,9 @@ export default function createNotification({
     // 上一个Notification卸载后，其后所有Notification向上/下移动
     for (let j = 0; j < notifications.length; j++) {
       notifications[j].el.style.transform = `translateY(${
-        position.indexOf("bottom") > -1 ? transformVal : -transformVal
+        position && position.indexOf("bottom") > -1
+          ? transformVal
+          : -transformVal
       }px)`;
       notifications[j].el.style.transition = "transform 0.5s ease";
     }
@@ -56,11 +58,10 @@ export default function createNotification({
   // 渲染Notification
   render(vnode, containerElem);
   // 直接将Notification渲染后的DOM元素append到body上，而不是append containerElem，避免在内部使用getBoundingClientRect获取notificationElemRef高度时获取不到
-  document.body.appendChild(containerElem.firstElementChild);
+  document.body.prepend(containerElem.firstElementChild);
   notifications.push(vnode);
   // 注意获取的是DOM更新后的高度值
   nextTick(() => {
     lastElemHeight = vnode.component.exposed.notificationHeight.value;
   });
-  setTimeout(() => {});
 }
