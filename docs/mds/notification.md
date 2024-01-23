@@ -19,3 +19,8 @@ prev:
 ## 不同位置
 
 <preview path="../previews/notification/ConfigPos.vue"></preview>
+
+## 持续时间
+
+默认为 5s
+<preview path="../previews/notification/ConfigDuration.vue"></preview>
